@@ -352,40 +352,13 @@
                     <div class="uk-grid uk-grid-divider" data-uk-grid-margin>
                         <div class="uk-width-large-1-1">
                             <div class="uk-grid uk-grid-medium" data-uk-grid-margin>
-                                <div class="uk-width-1-5">
-                                    <ul class="uk-tab uk-tab-left" data-uk-tab="{connect:'#tabs_6'}">
-                                        <li class="uk-active"><a href="#">What is Maintainly?</a></li>
-                                        <li><a href="#">What is predictive maintenance?</a></li>
-
-
-
-
-                                    </ul>
+                                <div class="uk-width-2-3">
+                                    <p><strong>What is Maintainly?</strong></p>
+                                    <p>Maintaily aims to help maintenance professionals and maintenance companies to improve the quality of their work by enhancing and extending the availability of equipment and introduce predictive maintenance into local businesses with a new approach of simplicity and ease of use, for further elevate the manufacturer and maintenance industry productivity, no matter the size nor the current maintenance model maturity.</p>
+                                    <p><strong>What is predictive maintenance?</strong></p>
+                                    <p> Predictive maintenance is a technique that uses condition-monitoring tools and techniques to track the performance of equipment during normal operation to detect possible defects and fix them before they result in failure.Ideally, predictive maintenance allows the maintenance frequency to be as low as possible to prevent unplanned reactive maintenance, without incurring costs associated with doing too much preventive maintenance. </p>
                                 </div>
-                                <div class="uk-width-3-4">
-                                    <ul id="tabs_6" class="uk-switcher uk-margin-small-top">
-                                        <li>
-                                         Maintainly is <br>
-                                        <br>•
-                                        <br>• I
-                                        <br>•
-                                        <br>•
-                                        <br>•
-
-
-                                        </li>
-                                        <li>
-                                        Predictive maintenance is<br>
-                                        <br>•
-                                        <br>•
-                                        <br>•
-                                        <br>•
-                                        <br>•
-
-                                        </li>
-
-                                    </ul>
-                                </div>
+                             
                             </div>
                         </div>
                     </div>
@@ -670,49 +643,7 @@
     </script>
 
 
- <script type="text/javascript">
-    var locations = [
-      ['Bondi Beach', 28.598986, 35.321845, 4],
-      ['Coogee Beach', 28.77, 35.30, 5],
-      ['Cronulla Beach', 28.60, 35.20, 3],
-      ['Manly Beach', 28.55, 35.11, 2],
-      ['Maroubra Beach', 28.48, 35.14,1]
-    ];
-
-     var dataFromLS = '<p>Sprinkler 2</p><p>Soil hum.: 93%</p><p style="font-size: 15px"> Pump Status: <span class="badge badge-pill badge-info">ON</span></sp>'
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(28.77, 35.30),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-     var icon = {
-    url: "https://image.flaticon.com/icons/svg/1275/1275835.svg", // url
-    scaledSize: new google.maps.Size(30, 30), // scaled size
-    origin: new google.maps.Point(0,0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
-};
-
-    var marker, i;
-    for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map,
-        icon: icon
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-        infowindow.setContent(dataFromLS);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  </script>
-  <!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap core JavaScript -->
   <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
   <!-- MDB core JavaScript -->
