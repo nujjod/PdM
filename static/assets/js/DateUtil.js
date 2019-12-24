@@ -2,7 +2,7 @@ function getTimeDiff(d) {
     if (d == 0)
         return "-";
 
-    var diff = new Date() - d.getTime();
+    var diff = d;
     var diffInSec = Math.floor(diff / 1000);
 
     if (diffInSec == 0) {
