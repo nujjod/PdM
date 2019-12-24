@@ -60,32 +60,6 @@ def LatestReading(id):
 # data_split[2] -> Temp
 # data_split[3] -> time
 
-# get engineer info
-def user_prifile(email):
-
-    doc_ref = db.collection(u'engineers').document(email)
-    try:
-        doc = doc_ref.get()
-        user = doc.to_dict()
-        return user
-    except google.cloud.exceptions.NotFound:
-        print(u'No such document!')
-
-def updateAssetLists(id,abnormality):
-    try:
-        asset = db.collection(u'Models').document(u'IPOWERFAN').collection(u'Assets').document(id)
-        asset.update({ u'abnormality': abnormality})
-	    #asset.collection('issue').add({ 'timestamp': firestore.SERVER_TIMESTAMP,'issueId':int(round(time.time()*1000))})
-
-        now = datetime.now()        
-        dt_string = now.strftime("%B %d, %Y at %H:%M:%S %p")
-        asset.update({u'issue': firestore.ArrayUnion([{ u'timestamp': dt_string,u'engID':'',u'status':'UNHANDLED',u'assetID':id,u'severity':'medium',u'issueID':int(round(time.time()*1000))}])})
-        return ''
-    except google.cloud.exceptions.NotFound:
-        return ''
-      
-      #updateAssetLists('IPOWERFAN002MPU',True)
-
 def AssetLists():
 
     try:
