@@ -64,7 +64,6 @@ def LatestReading(id):
 def user_prifile(email):
 
     doc_ref = db.collection(u'engineers').document(email)
-   #doc_ref = db.collection(u'engineers').document(u'malahmad@um.sa')
     try:
         doc = doc_ref.get()
         user = doc.to_dict()
