@@ -16,24 +16,32 @@
     <link rel="stylesheet" href="../static/assets/css/style_switcher.min.css" media="all">
     <link rel="stylesheet" href="../static/assets/css/main.min.css" media="all">
     <link rel="stylesheet" href="../static/assets/css/themes/themes_combined.min.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/mdb.min.css" rel="stylesheet">
+
 
 </head>
-<body class="disable_transitions sidebar_main_open sidebar_main_swipe">
+<body class="disable_transitions sidebar_main_open sidebar_main_swipe" style="background-color: #f8f8f8">
     <!-- main header -->
     <header id="header_main">
         <div class="header_main_content">
             <nav class="uk-navbar">
-                                
+
                 <!-- main sidebar switch -->
                 <a href="#" id="sidebar_main_toggle" class="sSwitch sSwitch_left">
                     <span class="sSwitchIcon"></span>
                 </a>
-                
+
                 <!-- secondary sidebar switch -->
                 <a href="#" id="sidebar_secondary_toggle" class="sSwitch sSwitch_right sidebar_secondary_check">
                     <span class="sSwitchIcon"></span>
                 </a>
-                   
+
                 <div class="uk-navbar-flip">
                     <ul class="uk-navbar-nav user_actions">
                         <li><a href="#" id="full_screen_toggle" class="user_action_icon uk-visible-large"><i class="material-icons md-24 md-light">fullscreen</i></a></li>
@@ -155,18 +163,18 @@
     </header><!-- main header end -->
     <!-- main sidebar -->
     <aside id="sidebar_main">
-          <div class="sidebar_main_header">
-            <div class="sidebar_logo">
-                <a href="index.html" class="sSidebar_hide sidebar_logo_large">
-                    <img class="logo_regular" src="../static/assets/img/logo_main.png" alt="" height="45" width="101"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" height="25" width="81"/>
-                </a>
-                <a href="index.html" class="sSidebar_show sidebar_logo_small">
-                    <img class="logo_regular" src="../static/assets/img/logo_main_small.png" alt="" height="32" width="32"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" height="32" width="32"/>
-                </a>
-            </div>
-        </div>
+      <div class="sidebar_main_header">
+         <div class="sidebar_logo align-middle">
+             <a href="index.html" class="sSidebar_hide sidebar_logo_large">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main.png" alt="" width="210px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" width="81"/> -->
+             </a>
+             <a href="index.html" class="sSidebar_show sidebar_logo_small">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main_small.png" alt=""  width="32px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" width="32"/> -->
+             </a>
+         </div>
+     </div>
         <div class="menu_section">
             <ul>
                 <li title="Home">
@@ -174,21 +182,21 @@
                         <span class="menu_icon"><i class="material-icons">home</i></span>
                         <span class="menu_title">Home</span>
                     </a>
-                    
+
                 </li>
                 <li title="Assets">
                     <a href="{{ url_for('assets') }}">
                         <span class="menu_icon"><i class="material-icons">bar_chart</i></span>
                         <span class="menu_title">Assets</span>
                     </a>
-                    
+
                 </li>
                 <li title="Timeline">
                     <a href="{{ url_for('timeline') }}">
                         <span class="menu_icon"><i class="material-icons">notifications</i></span>
                         <span class="menu_title">Timeline</span>
                     </a>
-                    
+
                 </li>
                 <li class="current_section" title="MyTasks">
                     <a href="{{ url_for('mytasks') }}">
@@ -201,9 +209,9 @@
                         <span class="menu_icon"><i class="material-icons">help</i></span>
                         <span class="menu_title">Help Center</span>
                     </a>
-                    
+
                 </li>
-        
+
             </ul>
         </div>
     </aside><!-- main sidebar end -->
@@ -213,7 +221,7 @@
 
           <div class="uk-grid">
             <div class="uk-width-medium-2-2">
-                <div class="md-card">
+                <div class="md-card shadow p-3 mb-2 bg-white rounded">
                     <div class="md-card-content">
                         <div class="uk-flex uk-flex-middle">
                             <div class="uk-flex-item-1">
@@ -232,7 +240,7 @@
 
           <div class="uk-grid">
             <div class="uk-width-medium-2-2">
-                <div class="md-card">
+                <div class="md-card shadow p-3 mb-2 bg-white rounded">
                     <div class="md-card-content">
                         <div class="uk-flex uk-flex-middle">
                             <div class="uk-flex-item-1">
@@ -275,8 +283,12 @@
 
     <script src="../static/assets/js/DateUtil.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/mdb.min.js"></script>
+
      <script type="text/javascript" src="{{ url_for('static', filename='assets/js/common.min.js') }}"></script>
     <!-- uikit functions -->
     <script  type="text/javascript" src="{{ url_for('static', filename='assets/js/uikit_custom.min.js') }}"></script>
@@ -537,7 +549,7 @@
 
             firestore = firebase.firestore();
         }
-        
+
         function loadCurrentUserAndIssues() {
             firebase.auth().onAuthStateChanged(function(user) {
                 var currentEmail = '';
@@ -582,19 +594,17 @@
 
                             if (issue.status.toUpperCase() == "RESOLVED") {
                                 $('#resolved').append('<li>\n' +
-                                    '                                <div class="md-list-addon-element">\n' +
-                                    '                                    <i class="material-icons md-36 uk-text-warning"></i>\n' +
-                                    '                                </div>\n' +
+                                    '                                <div class="md-list-addon-element">' +getIcon(issue.severity.toUpperCase())+'</div>' +
                                     '                                <div class="md-list-content">\n' +
                                     '                                    <div class="uk-flex uk-flex-middle">\n' +
                                     '                                        <div class="uk-width-8-10">\n' +
-                                    '                                            <h4 class="uk-margin-remove uk-text-truncate">\n' +
-                                    '                                               Asset ID: ' + assetID +
-                                    '                                            </h4>\n' +
-                                    '                                            <p class="uk-margin-remove">Asset has.. </p>\n' +
+                                    '                                            <div><span class="text-muted font-weight-bold">Asset ID: </span><span class="text-muted font-weight-normal">' + assetID +
+                                    '                                            </span></div>' +
                                     '                                            <div>\n' +
-                                    '                                         <span class="uk-text-muted">' + timeDiff + '</span>\n' +
+                                    '                                         <span class="text-muted font-weight-normal">' + timeDiff + '</span>\n' +
                                     '                                            </div>\n' +
+                                    '                                            <div>\n' +
+                                    '                                            <span class="text-muted font-weight-normal">'+issue.description+' </span>\n' +
                                     '                                        </div>\n' +
                                     '                                      \n' +
                                     '                                    </div>\n' +
@@ -731,6 +741,19 @@
 
                 });
 
+        }
+        function getIcon(severity){
+          var text = "";
+          switch(severity){
+            case "HIGH": text+= '<img src="../static/assets/img/severity-high.png">';
+             break;
+            case "MEDIUM": text+= '<img src="../static/assets/img/severity-medium.png">';
+             break;
+            case "LOW": text+= '<img src="../static/assets/img/severity-low.png">';
+             break;
+          }
+          console.log("icon: "+text);
+          return text;
         }
 
         function logout(){

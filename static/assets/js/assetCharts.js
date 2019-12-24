@@ -85,9 +85,9 @@ var tempretureLineChart=new Chart(ctxTEMPLINE, {
         ]
     }
     ,
-    responsive: true,
-    maintainAspectRatio: false,
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
         //    padding: 10
         }
@@ -147,9 +147,9 @@ var motionLineChart=new Chart(ctxMOTIONLINE, {
         ]
     }
     ,
-    responsive: true,
-    maintainAspectRatio: false,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
         layout: {
       //      padding: 10
         }
@@ -173,6 +173,7 @@ var motionLineChart=new Chart(ctxMOTIONLINE, {
 }
 
 );
+
 //doughnut chart
 var ctxDOUGHNUT=document.getElementById('DoughnutChart').getContext('2d');
 var doughnutChart=new Chart(ctxDOUGHNUT, {

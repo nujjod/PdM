@@ -20,9 +20,18 @@
     <link rel="stylesheet" href="../static/assets/css/style_switcher.min.css" media="all">
     <link rel="stylesheet" href="../static/assets/css/main.min.css" media="all">
     <link rel="stylesheet" href="../static/assets/css/themes/themes_combined.min.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/style.css" rel="stylesheet">
 
 </head>
-<body class="disable_transitions sidebar_main_open sidebar_main_swipe">
+<body class="disable_transitions sidebar_main_open sidebar_main_swipe" style="background-color: #f8f8f8">
     <!-- main header -->
    <h1 id="d"></h1>
     <header id="header_main">
@@ -59,18 +68,18 @@
     </header><!-- main header end -->
     <!-- main sidebar -->
     <aside id="sidebar_main">
-          <div class="sidebar_main_header">
-             <div class="sidebar_logo">
-                <a href="index.html" class="sSidebar_hide sidebar_logo_large">
-                    <img class="logo_regular" src="../static/assets/img/logo_main.png" alt="" height="45" width="101"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" height="25" width="81"/>
-                </a>
-                <a href="index.html" class="sSidebar_show sidebar_logo_small">
-                    <img class="logo_regular" src="../static/assets/img/logo_main_small.png" alt="" height="32" width="32"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" height="32" width="32"/>
-                </a>
-            </div>
-        </div>
+      <div class="sidebar_main_header">
+         <div class="sidebar_logo align-middle">
+             <a href="index.html" class="sSidebar_hide sidebar_logo_large">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main.png" alt="" width="210px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" width="81"/> -->
+             </a>
+             <a href="index.html" class="sSidebar_show sidebar_logo_small">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main_small.png" alt=""  width="32px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" width="32"/> -->
+             </a>
+         </div>
+     </div>
 
         <div class="menu_section">
             <ul>
@@ -118,7 +127,7 @@
         <div id="page_content_inner">
    <h3 class="heading_b uk-margin-bottom">Register New Asset</h3>
 
-            <div class="md-card">
+            <div class="md-card shadow p-3 mb-2 bg-white rounded">
                 <div class="md-card-content large-padding">
                     <form id="form_validation" class="uk-form-stacked">
                         <div class="uk-grid" data-uk-grid-margin>
@@ -130,7 +139,7 @@
                                     </span>
                                     <select id="asset_type" required data-md-selectize>
                                         <option value="">Choose..</option>
-                                        <option value="fan">Fan</option>
+                                        <option value="fan">Duct Fan</option>
                                     </select>
                                 </div>
                             </div>
@@ -587,9 +596,13 @@ if(sensor_ids.includes(sensor_id)){// add options to manipulate confirm dialog
 <script>
     // load parsley config (altair_admin_common.js)
 altair_forms.parsley_validation_config();
-    
+
 </script>
-    
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/mdb.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
   <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
@@ -599,12 +612,12 @@ altair_forms.parsley_validation_config();
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
 <script>
-    
+
   function logout(){
   firebase.auth().signOut();
   window.location.href = "{{ url_for('login') }}";
 }
- 
+
   var firebaseConfig = {
     apiKey: "AIzaSyAal-QcuayT4d32G-6YJLw8m7Um5b1BPrg",
     authDomain: "raspberrypi-6b521.firebaseapp.com",
@@ -620,9 +633,9 @@ altair_forms.parsley_validation_config();
   firebase.analytics();
 
 </script>
-      
+
 <script>
-    
+
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -634,7 +647,7 @@ altair_forms.parsley_validation_config();
     window.location.href = "{{ url_for('login') }}";
   }
 });
- 
+
 </script>
 <script src="../static/bower_components/parsleyjs/dist/parsley.min.js"></script>
 

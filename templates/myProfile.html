@@ -25,9 +25,16 @@
     <link rel="stylesheet" href="assets/css/style_switcher.min.css" media="all">
     <link rel="stylesheet" href="assets/css/main.min.css" media="all">
     <link rel="stylesheet" href="assets/css/themes/themes_combined.min.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/mdb.min.css" rel="stylesheet">
 
 </head>
-<body class="disable_transitions sidebar_main_open sidebar_main_swipe">
+<body class="disable_transitions sidebar_main_open sidebar_main_swipe" style="background-color: #f8f8f8">
     <!-- main header -->
     <header id="header_main">
         <div class="header_main_content">
@@ -167,19 +174,19 @@
     <!-- main sidebar -->
     <aside id="sidebar_main">
 
-        <div class="sidebar_main_header">
-            <div class="sidebar_logo">
-                <a href="index.html" class="sSidebar_hide sidebar_logo_large">
-                    <img class="logo_regular" src="../static/assets/img/logo_main.png" alt="" height="45" width="101"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" height="25" width="81"/>
-                </a>
-                <a href="index.html" class="sSidebar_show sidebar_logo_small">
-                    <img class="logo_regular" src="../static/assets/img/logo_main_small.png" alt="" height="32" width="32"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" height="32" width="32"/>
-                </a>
-            </div>
-        </div>
-          
+      <div class="sidebar_main_header">
+         <div class="sidebar_logo align-middle">
+             <a href="index.html" class="sSidebar_hide sidebar_logo_large">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main.png" alt="" width="210px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" width="81"/> -->
+             </a>
+             <a href="index.html" class="sSidebar_show sidebar_logo_small">
+                 <img class="logo_regular" src="../../static/assets/img/logo_main_small.png" alt=""  width="32px"/>
+                 <!-- <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" width="32"/> -->
+             </a>
+         </div>
+     </div>
+
         <div class="menu_section">
             <ul>
                 <li  title="Home">
@@ -226,14 +233,14 @@
             <form action="" class="uk-form-stacked" id="user_edit_form">
                 <div class="uk-grid" data-uk-grid-margin>
                     <div class="uk-width-large-20-10">
-                        <div class="md-card">
+                        <div class="md-card shadow p-3 mb-2 bg-white rounded">
                             <div class="user_heading" data-uk-sticky="{ top: 48, media: 960 }">
                                 <div class="user_heading_avatar fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-new thumbnail">
                                         <img class="md-user-image" src="../static/assets/img/avatars/engineer.png" alt=""/>
                                     </div>
                                     <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                       
+
                                 </div>
                                 <div class="user_heading_content">
                                     <h2 class="heading_b"><span class="uk-text-truncate" id="user_edit_uname"></span><span class="sub-heading" id="user_edit_position"></span></h2>
@@ -249,8 +256,8 @@
                                 <ul id="user_edit_tabs_content" class="uk-switcher uk-margin">
                                     <li>
                                         <div class="uk-margin-top">
- 
-                             
+
+
                                                             <div class="uk-input-group">
                                                                 <span class="uk-input-group-addon">
                                                                     <i class="md-list-addon-icon material-icons">&#xE158;</i>
@@ -260,7 +267,7 @@
                                                                     </span><span class="sub-heading" id="user_edit_position"></span></h2>
                                                             </div>
                                         </div>
-   
+
                                     </li>
 
 
@@ -275,7 +282,7 @@
         </div>
     </div>
 
-    
+
      <!-- google web fonts -->
     <script>
         WebFontConfig = {
@@ -388,7 +395,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>   
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 <script>
  var firebaseConfig = {
     apiKey: "AIzaSyAal-QcuayT4d32G-6YJLw8m7Um5b1BPrg",
@@ -550,7 +557,7 @@
 
     <script>
 
-    
+
     var firestore = firebase.firestore();
 function read(email_id){
 firebase.firestore().collection("engineers").get().then(function(querySnapshot) {
@@ -558,16 +565,21 @@ firebase.firestore().collection("engineers").get().then(function(querySnapshot) 
           var name = doc.data().name;
           var email = doc.data().email;
           if(email==email_id){
-             document.getElementById("email").innerHTML = email; 
-             document.getElementById("name").innerHTML = name; 
-              
+             document.getElementById("email").innerHTML = email;
+             document.getElementById("name").innerHTML = name;
+
           }
-          
+
       });
 });
 }
-        
-</script> 
+
+</script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/mdb.min.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
   <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
@@ -578,12 +590,12 @@ firebase.firestore().collection("engineers").get().then(function(querySnapshot) 
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
 <script>
-    
+
   function logout(){
   firebase.auth().signOut();
   window.location.href = "{{ url_for('login') }}";
 }
- 
+
   var firebaseConfig = {
     apiKey: "AIzaSyAal-QcuayT4d32G-6YJLw8m7Um5b1BPrg",
     authDomain: "raspberrypi-6b521.firebaseapp.com",
@@ -599,9 +611,9 @@ firebase.firestore().collection("engineers").get().then(function(querySnapshot) 
   firebase.analytics();
 
 </script>
-      
+
 <script>
- 
+
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -614,9 +626,9 @@ firebase.firestore().collection("engineers").get().then(function(querySnapshot) 
     window.location.href = "{{ url_for('login') }}";
   }
 });
-    
+
     </script>
-    
+
 
 </body>
 </html>

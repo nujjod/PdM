@@ -48,7 +48,7 @@ function appendUnhandled(issue,i){
     first_unhandled = false;
   }
   text += initiateIssues(issue);
-  text += '<button type="button" class="btn btn-primary" onClick="handle('+i.toString()+')">HANDLE</button>'
+  text += '<button type="button" class="btn btn-md btn-primary" onClick="handle('+i.toString()+')">HANDLE</button>'
 +'</div>'
 +'</div>'
 +'</div>'
@@ -64,7 +64,7 @@ function appendHandled(issue,i){
   }
   text +=  initiateIssues(issue);
   if(issue['engID']==currentUser){
-    text += '<button type="button" class="btn btn-light-green  mr-3" onClick="resolve('+i.toString()+')">RESOLVE</button>'
+    text += '<button type="button" class="btn btn-md btn-light-green  mr-3" onClick="resolve('+i.toString()+')">RESOLVE</button>'
   +'<button class="btn btn-amber float-right" onClick="abandon('+i.toString()+')">ABANDON</button>'
   }
   else{

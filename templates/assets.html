@@ -17,21 +17,25 @@
     <link rel="stylesheet" href="../static/assets/css/main.min.css" media="all">
     <link rel="stylesheet" href="../static/assets/css/themes/themes_combined.min.css" media="all">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!--bootstrap-->
-    <script type="text/javascript" src="../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="../../static/bower_components/MDB-Free_4.10.1/css/style.css" rel="stylesheet">
 
     <style>
    #myInput {
-  /* background-image: url('/css/searchicon.png'); /* Add a search icon to input */ */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 70%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 10px;
+  /* background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  /* background-position: 10px 12px; /* Position the search icon */
+   /*background-repeat: no-repeat; Do not repeat the icon image */
+   /*width: 70%; /* Full-width */
+   /*font-size: 16px; /* Increase font-size */
+   /*padding: 12px 20px 12px 40px; /* Add some padding */
+   /*border: 1px solid #ddd; /* Add a grey border */
+   /*margin-bottom: 10px;
   margin-top: 12px;/* Add some space below the input */
 }
 
@@ -75,14 +79,14 @@
     <aside id="sidebar_main">
 
          <div class="sidebar_main_header">
-            <div class="sidebar_logo">
+            <div class="sidebar_logo align-middle">
                 <a href="index.html" class="sSidebar_hide sidebar_logo_large">
-                    <img class="logo_regular" src="../static/assets/img/logo_main.png" alt="" height="45" width="101"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" height="25" width="81"/>
+                    <img class="logo_regular" src="../static/assets/img/logo_main.png" alt="" width="210px"/>
+                    <!-- <img class="logo_light" src="../static/assets/img/logo_main_white.png" alt="" width="81"/> -->
                 </a>
                 <a href="index.html" class="sSidebar_show sidebar_logo_small">
-                    <img class="logo_regular" src="../static/assets/img/logo_main_small.png" alt="" height="32" width="32"/>
-                    <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" height="32" width="32"/>
+                    <img class="logo_regular" src="../static/assets/img/logo_main_small.png" alt=""  width="32px"/>
+                    <!-- <img class="logo_light" src="../static/assets/img/logo_main_small_light.png" alt="" width="32"/> -->
                 </a>
             </div>
         </div>
@@ -138,7 +142,20 @@
                         <div class="uk-flex uk-flex-middle">
                             <div class="uk-flex-item-1">
                                 <h2 class="heading_b">Assets</h2>
-                             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for assets">
+                                <form class="form-inline active-cyan-3 active-cyan-4">
+                                  <i class="fas fa-search" aria-hidden="true"></i>
+                                  <input id="myInput" class="form-control ml-3 w-75" type="text" placeholder="Search" aria-label="Search" onkeyup="myFunction()">
+                             <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for assets"> -->
+                             <div class="dropdown">
+                              <button class="btn btn-sm btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                - Asset type -
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">All</a>
+                                <a class="dropdown-item" href="#">Duct Fan</a>
+                              </div>
+                            </div>
+                            </form>
                             </div>
                             <div>
                             </div>
@@ -177,12 +194,18 @@
         })();
     </script>
 
-  <script type="text/javascript" src="{{ url_for('static', filename='assets/js/common.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='assets/js/common.min.js') }}"></script>
     <!-- uikit functions -->
     <script  type="text/javascript" src="{{ url_for('static', filename='assets/js/uikit_custom.min.js') }}"></script>
 
     <!-- altair common functions/helpers -->
     <script  type="text/javascript" src="{{ url_for('static', filename='assets/js/altair_admin_common.min.js') }}"></script>
+    <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/bower_components/parsleyjs/bower_components/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../../static/bower_components/MDB-Free_4.10.1/js/mdb.min.js"></script>
 
         <!--  dashbord functions -->
         <!-- <script src="../static/assets/js/pages/dashboard.min.js"></script> -->
@@ -451,12 +474,14 @@ var firestore = firebase.firestore();
                 '<div class="md-list-content">'+
                   '<div class="uk-flex uk-flex-middle">'+
                     '<div class="uk-width-9-10">'+
-                      '<h4 class="uk-margin-medium-bottom uk-margin-medium-top  uk-text-truncate">'+
-                        '<a href="#">'+' Asset ID: '+assetID+'</a>'+
-                      '</h4>'+
+                      '<div class="uk-margin-medium-bottom uk-margin-medium-top  uk-text-truncate">'+
+                        '<div><span class="text-muted font-weight-bold">ASSET ID: </span><span class="text-muted font-weight-normal"><a>'+assetID+'</a></span></div>'+
+                        '<div><span class="text-muted font-weight-bold">ASSET TYPE: </span><span class="text-muted font-weight-normal">'+doc.data().type+'</span></div>'+
+                        '<div><span class="text-muted font-weight-bold">ASSET MODEL: </span><span class="text-muted font-weight-normal">'+doc.data().model+'</span></div>'+
+                      '</div>'+
                     '</div>'+
                   '<div class="uk-width-medium-1-10">'+
-                    '<a id="assetButton" class="md-btn md-btn-warning md-btn-wave-light" href="'+url+'">Details</a>'+
+                    '<a id="assetButton" class="btn btn-info" href="'+url+'">Details</a>'+
                     '</div>'+
                 '</div>'+
                 '</div>'+

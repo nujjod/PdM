@@ -106,7 +106,7 @@ function extractData(data){
 function assetInfo(data){
    document.getElementById('info-type').innerHTML = data['type'];
    document.getElementById('info-make').innerHTML = data['make'];
-   document.getElementById('info-model').innerHTML = assetModel;
+   document.getElementById('info-model').innerHTML = data['model'];
    $("#asset-manual").attr("href", data['manual']);
    $("#asset-icon").attr("src", data['icon']);
 }
@@ -114,7 +114,6 @@ function assetInfo(data){
 
 function incidents(data){
   issues = sortIncidents(data);
-  var total = [];
   var status = "";
   var severity = "";
   var text = "";
@@ -122,13 +121,10 @@ function incidents(data){
   var issue = issues[i];
       switch(issue['severity'].toUpperCase()){//severities
         case "HIGH": severity = '<td class="uk-width-1-10 uk-text-nowrap"><small style="color: RGBA(233,89,16,0.75)">HIGHT</small></span></td>';
-        total[total.length]= "HIGH";
         break;
         case "MEDIUM": severity = '<td class="uk-width-1-10 uk-text-nowrap"><small style="color: RGBA(253,183,5,1)"><small>MEDIUM</small></span></td>';
-        total[total.length]= "MEDIUM";
         break;
         case "LOW": severity = '<td class="uk-width-1-10 uk-text-nowrap"><small style="color: rgba(250,214,12,1)"><small>LOW</small></span></td>';
-        total[total.length]= "LOW";
       }
       switch(issue['status'].toUpperCase()){//statuses
         case "HANDLED": if(issue["engID"] == currentUser){
